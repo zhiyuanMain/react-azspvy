@@ -1,5 +1,6 @@
 import React from 'react'
 import { Icon } from '../../components'
+import { WithCickOutside } from '../../hoc'
 import '../../assets/sass/bsComponents/User.scss'
 
 
@@ -8,15 +9,9 @@ class User extends React.Component {
     super(props)
   }
 
-  state = {
-    isOpened: false   
-  }
+  refWithClickOutside = null
 
-  handleToggle = () => {
-    this.setState(prevState => ({
-      isOpened: !prevState.isOpened
-    }))
-  }
+  initRef = e => this.refWithClickOutside = e
 
   renderAvatar = () => {
     const { prefixCls } = this.props
@@ -32,8 +27,7 @@ class User extends React.Component {
   }
 
   renderArrow = () => {
-    const { prefixCls } = this.props
-    const { isOpened } = this.state
+    const { prefixCls, isOpened } = this.props
     const wrapCls = `${prefixCls}__arrow ${isOpened ? 'opened' : ''}`
 
     return (
@@ -49,7 +43,10 @@ class User extends React.Component {
     const { prefixCls } = this.props
 
     return (
-      <section className={prefixCls} onClick={this.handleToggle}>
+      <section 
+        ref={this.initRef}
+        className={prefixCls}
+      >
         {this.renderAvatar()}
         {this.renderArrow()}
       </section>
@@ -59,7 +56,10 @@ class User extends React.Component {
 
 
 User.defaultProps = {
-  prefixCls: 'bs-user'
+  prefixCls: 'bs-user',
+
+  // clickoutside相关
+  isOpened: false
 }
 
-export default User
+export default WithCickOutside(User)
