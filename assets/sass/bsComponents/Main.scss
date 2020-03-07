@@ -1,0 +1,17 @@
+@import "../variables/_variables.scss";
+.bs-main {
+  display: flex;
+  justify-content: space-between;
+
+  &__aside {
+    width: 220px;
+    background: red;
+  }
+
+  &__content {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    background: #f2a;
+  }
+}
