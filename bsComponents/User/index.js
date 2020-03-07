@@ -27,11 +27,10 @@ class User extends React.Component {
   }
 
   renderArrow = () => {
-    const { prefixCls, isOpened } = this.props
-    const wrapCls = `${prefixCls}__arrow ${isOpened ? 'opened' : ''}`
+    const { prefixCls } = this.props
 
     return (
-      <span className={wrapCls}>
+      <span className={`${prefixCls}__arrow`}>
         <Icon 
           iconClass="icon-arrow" 
         />
@@ -39,16 +38,29 @@ class User extends React.Component {
     )
   }
 
-  render() {
+  renderMenus = () => {
     const { prefixCls } = this.props
+
+    return (
+      <ul className={`${prefixCls}__dropdown`}>
+        <li>Profile</li>
+        <li>Sign Out</li>
+      </ul>
+    )
+  }
+
+  render() {
+    const { prefixCls, isOpened } = this.props
+    const wrapCls = `${prefixCls} ${isOpened ? 'opened' : ''}`
 
     return (
       <section 
         ref={this.initRef}
-        className={prefixCls}
+        className={wrapCls}
       >
         {this.renderAvatar()}
         {this.renderArrow()}
+        {this.renderMenus()}
       </section>
     )
   }
