@@ -2,10 +2,17 @@
 .bs-main {
   display: flex;
   justify-content: space-between;
+  height: 100%;
+
+  &-section {
+    height: 100%;
+  }
 
   &__aside {
     width: 220px;
     background: red;
+    height: 100%;
+    overflow: hidden;
   }
 
   &__content {

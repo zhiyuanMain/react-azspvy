@@ -29,6 +29,7 @@
   &__dropdown {
     display: none;
     position: absolute;
+    z-index: 10;
     top: 100%;
     right: 0;
     min-width: 120px;

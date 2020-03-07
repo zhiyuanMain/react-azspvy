@@ -3,10 +3,15 @@ import { Block } from '../../components'
 import '../../assets/sass/bsComponents/Main.scss'
 
 const Main = ({prefixCls}) => (
-  <Block>
+  <Block
+    wrapCls={`${prefixCls}-section`}
+  >
     <section 
       className={prefixCls}
-    >© Copyright 2020</section>
+    >
+      <div className={`${prefixCls}__aside`}></div>
+      <div className={`${prefixCls}__content`}></div>
+    </section>
   </Block>
 )
 
