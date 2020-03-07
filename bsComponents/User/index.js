@@ -11,7 +11,7 @@ class User extends React.Component {
   renderAvatar = () => {
     const { prefixCls } = this.props
 
-    return <span className={`${prefixCls}__title`}><Icon iconClass="icon-avatar" /></span>
+    return <span className={`${prefixCls}__title`}><Icon iconClass="icon-angle-down" /></span>
   }
 
   renderUser = () => {
