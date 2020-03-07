@@ -3,6 +3,7 @@ import { Icon } from '../../components'
 import { WithCickOutside } from '../../hoc'
 import '../../assets/sass/bsComponents/User.scss'
 
+import imgAvatar from '../../assets/img/avatar.jpg'
 
 class User extends React.Component {
   constructor(props) {
@@ -18,10 +19,7 @@ class User extends React.Component {
 
     return (
       <span className={`${prefixCls}__avatar`}>
-        <Icon 
-          iconClass="icon-avatar" 
-          size="24px"
-        />
+        <img src={imgAvatar} />
       </span>
     )
   }
