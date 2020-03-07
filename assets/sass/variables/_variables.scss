@@ -1,0 +1,46 @@
+@charset "UTF-8";
+// enum-colors
+$primary: #00b4cf;   $primary-deep: #01869A;
+$cancel : #2D4054;   $cancel-deep : #435466;
+$default: #F3F3F3;   $default-deep: #E1E4E6;
+$success: #7FBC39;   $success-deep: #7FBC39;
+$warning: #FF9A2A;   $warning-deep: #FF9A2A;
+$hover  : #EFEFEF;
+$white  : #fff;
+
+
+// bg-colors
+$bg-colors-primary: $primary;
+$bg-colors-cancel: $cancel;
+$bg-colors-default: $default;
+$bg-colors-success: $success;
+$bg-colors-warning: $warning;
+$bg-colors-white: $white;
+
+$bg-colors-deep-primary: $primary-deep;
+$bg-colors-deep-cancel: $cancel-deep;
+$bg-colors-deep-default: $default-deep;
+$bg-colors-deep-success: $success-deep;
+$bg-colors-deep-warning: $warning-deep;
+
+
+// font-colors
+$font-color-default: #2D4054;
+$font-color-default-hover: #00B4CF;
+$font-color-gray: #999;
+$font-color-gray-hover: #0084CF;
+
+// font-size
+$small    : 12px;
+$base     : 14px;
+$large    : 16px;
+$exlarge  : 18px;
+$eexlarge : 20px;
+$eeexlarge: 24px;
+
+
+// box-shadow
+$box-shadow-color: rgba(0, 0, 0, 0.3);
+
+// screen
+$screen-width: 1300px;

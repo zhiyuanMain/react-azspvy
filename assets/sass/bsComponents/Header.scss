@@ -1,0 +1,19 @@
+@import "../variables/_variables.scss";
+.bs-header {
+  padding: 0 10px;
+  line-height: 20px;
+  text-align: center;
+
+  &__title {
+    line-height: 60px;
+    font-size: $eeexlarge;
+    font-weight: bold;
+  }
+
+  &__user {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%)
+  }
+}

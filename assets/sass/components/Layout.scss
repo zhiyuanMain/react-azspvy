@@ -1,0 +1,16 @@
+@import "../variables/_variables.scss";
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__header,
+  &__footer {
+    background: $bg-colors-white;
+    box-shadow: 0 0 5px $box-shadow-color;
+  }
+
+  &__body {
+    flex: 1;
+  }
+}
