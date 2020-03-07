@@ -1,0 +1,21 @@
+@import "../variables/_variables.scss";
+.bs-user {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  &__avatar {
+    margin-right: 5px;
+  }
+
+  &__arrow {
+    transform: rotate(180deg);
+    transition: all .3s;
+
+    &.opened {
+      transform: rotate(0);
+    }
+  }
+
+}

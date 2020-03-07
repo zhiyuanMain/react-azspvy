@@ -1,6 +1,6 @@
 import React from 'react'
 import { Icon } from '../../components'
-import '../../assets/sass/bsComponents/Header.scss'
+import '../../assets/sass/bsComponents/User.scss'
 
 
 class User extends React.Component {
@@ -8,24 +8,50 @@ class User extends React.Component {
     super(props)
   }
 
+  state = {
+    isOpened: false   
+  }
+
+  handleToggle = () => {
+    this.setState(prevState => ({
+      isOpened: !prevState.isOpened
+    }))
+  }
+
   renderAvatar = () => {
     const { prefixCls } = this.props
 
-    return <span className={`${prefixCls}__title`}><Icon iconClass="icon-angle-down" /></span>
+    return (
+      <span className={`${prefixCls}__avatar`}>
+        <Icon 
+          iconClass="icon-avatar" 
+          size="24px"
+        />
+      </span>
+    )
   }
 
-  renderUser = () => {
+  renderArrow = () => {
     const { prefixCls } = this.props
+    const { isOpened } = this.state
+    const wrapCls = `${prefixCls}__arrow ${isOpened ? 'opened' : ''}`
 
-    return <div className={`${prefixCls}__user`}>MANAGE</div>
+    return (
+      <span className={wrapCls}>
+        <Icon 
+          iconClass="icon-arrow" 
+        />
+      </span>
+    )
   }
 
   render() {
     const { prefixCls } = this.props
+
     return (
-      <section className={prefixCls}>
+      <section className={prefixCls} onClick={this.handleToggle}>
         {this.renderAvatar()}
-        {this.renderUser()}
+        {this.renderArrow()}
       </section>
     )
   }
