@@ -10,7 +10,6 @@
 
   &__aside {
     width: 220px;
-    background: red;
     height: 100%;
     overflow: hidden;
   }
@@ -19,6 +18,6 @@
     flex: 1;
     height: 100%;
     overflow-y: auto;
-    background: #f2a;
+    overflow-x: hidden;
   }
 }
