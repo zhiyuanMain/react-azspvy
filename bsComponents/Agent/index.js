@@ -14,14 +14,14 @@ class Agent extends React.Component {
 
   // 加载更多
   handleConcatList = () => {
-    this.props.concatAgentList(generateDataByTotal(10))
+    this.props.concatAgentList(generateDataByTotal(10)).then(() => {
+      this.props.setRequestingStatus(false)
+    })
   }
 
   // delete
   handleDelete = (rowId, itemIndex) => {
-    this.props.deleteRowItemById(rowId, itemIndex).then(() => {
-      this.props.setRequestingStatus(false)
-    })
+    this.props.deleteRowItemById(rowId, itemIndex)
   }
   renderList = () => {
     const { prefixCls, list } = this.props
