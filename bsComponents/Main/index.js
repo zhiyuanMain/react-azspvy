@@ -1,6 +1,6 @@
 import React from 'react'
 import { Block } from '../../components'
-import { BsAside } from '../../bsComponents'
+import { BsAside, BsAgent } from '../../bsComponents'
 import '../../assets/sass/bsComponents/Main.scss'
 
 const Main = ({prefixCls}) => (
@@ -14,22 +14,7 @@ const Main = ({prefixCls}) => (
         <BsAside />
       </div>
       <div className={`${prefixCls}__content`}>
-      12
-          <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-          <br></br><br></br><br></br><br></br><br></br>
-          <br></br><br></br>2323
-          <br></br><br></br><br></br>
-          <br></br><br></br><br></br><br></br>
-          <br></br><br></br><br></br><br></br>
-          <br></br><br></br><br></br><br></br>
-          <br></br><br></br><br></br><br></br>
-          <br></br><br></br><br></br><br></br>
-          <br></br><br></br><br></br><br></br>
-          <br></br><br></br><br></br><br></br>
-          <br></br><br></br><br></br><br></br>
-          <br></br><br></br><br></br><br></br>
-          2323
-          <br></br><br></br><br></br>
+        <BsAgent />
       </div>
     </section>
   </Block>

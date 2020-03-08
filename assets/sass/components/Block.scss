@@ -3,3 +3,9 @@
   position: relative;
   margin: 0 auto;
 }
+
+@media (min-width: $screen-width) {
+  .block {
+    width: 1200px;
+  }
+}
