@@ -5,6 +5,8 @@ import Item from './Item'
 import { setMenuKey } from '../../actions/aside'
 import '../../assets/sass/bsComponents/Agent.scss'
 
+import { agentList } from '../../mock/agentList'
+
 
 
 class Agent extends React.Component {
@@ -15,9 +17,17 @@ class Agent extends React.Component {
   renderList = () => {
     const { prefixCls, list } = this.props
     return (
-      <Item 
-        prefixCls={`${prefixCls}__box`}
-      />
+      <React.Fragment>
+        {
+          agentList.map(item => (
+            <Item 
+              key={item.id}
+              prefixCls={`${prefixCls}__box`}
+              {...item}
+            />
+          ))
+        }
+      </React.Fragment>
     )
   }
 

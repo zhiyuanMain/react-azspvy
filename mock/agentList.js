@@ -1,19 +1,23 @@
 const imgSrc = [
-    './assets/img/windows.png',
-    './assets/img/cent_os.png',
-    './assets/img/debin.png',
-    './assets/img/suse.png',
-    './assets/img/ubuntu.png'
+    'icon-word',
+    'icon-outlook',
+    'icon-powerpoint',
+    'icon-excel',
+    'icon-bower'
 ]
 
+
+
 //0 building 1 idle
-const generateDataByTotal = function(total) {
+const generateDataByTotal = (total) => {
     const result = [];
     for (let index = 0; index < total; index++) {
+      const generateMathRandom = Math.random()
         result.push({
-            id: index,
-            type: Math.random() > 0.5 ? 0 : 1,
-            img: imgSrc[index],
+            id: `${new Date().getTime()}__${index}`,
+            type: generateMathRandom > 0.5 ? 0 : 1,
+            badge: generateMathRandom > 0.5 ? 'idle' : 'building' ,
+            img: imgSrc[index % 5],
             realAddress: `bjstdmngr${index}.alipay.com`,
             localAddress: `192.158.1.10${index}`,
             folderAddress: `/assets/dev/user-${index}`,
@@ -24,9 +28,9 @@ const generateDataByTotal = function(total) {
     return result
 }
 
-function getLists(num) {
+const getLists = (num) => {
     const browers = ['IE', 'Chrome', 'Firefox', 'Opera']
     return browers.splice(0, num+1)
 }
 
-export const agentList = generateDataByTotal(5)
+export const agentList = generateDataByTotal(10)

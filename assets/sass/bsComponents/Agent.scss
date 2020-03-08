@@ -1,6 +1,47 @@
 @import "../variables/_variables.scss";
 .bs-agent {
-  line-height: 20px;
-  text-align: center;
+  padding: 0 10px 10px;
 
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    min-height: 90px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: $white;
+
+    &__img {
+      display: block;
+      width: 80px;
+      height: 80px;
+    }
+
+    &__info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+
+      &__header {
+        display: flex;
+        align-items: center;
+
+        dt {
+          color: $font-color-default-hover;
+
+          .badge {
+            margin-left: 5px;
+          }
+        }
+
+        dt,
+        dd {
+          padding: 0 5px;
+          .svg-icon {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
 }
