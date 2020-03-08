@@ -6,6 +6,10 @@ class Item extends React.Component {
     super(props)
   }
 
+  refAddBtn = null
+
+  initRef = e => this.refAddBtn = e
+
   renderImg = () => {
     const { prefixCls, img } = this.props
     const wrapCls = `${prefixCls}__img`
@@ -60,8 +64,8 @@ class Item extends React.Component {
 
     return (
       <div className={wrapCls}>
-        <span className={`${wrapCls}__add`}>
-          <Btn onClick={() => onAdd(id)}>
+        <span className={`${wrapCls}__add`} ref={this.initRef}>
+          <Btn onClick={() => onAdd(id, this.refAddBtn)} id={`$${id}`}>
             <Icon iconClass="icon-increase" size="16px" />
           </Btn>
         </span>

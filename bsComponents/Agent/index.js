@@ -10,7 +10,8 @@ import '../../assets/sass/bsComponents/Agent.scss'
 const INIT_CONFIMMODALPROPS = {
   visible: false,
   okText: 'Add Resource',
-  cancelText: 'Cancel'
+  cancelText: 'Cancel',
+  currentRef: null
 }
 
 const INIT_OPERATEROWINFO = {
@@ -46,13 +47,11 @@ class Agent extends React.Component {
 
   handleModalOk = () => {
     const { operateRowInfo } = this.state
-    console.log(operateRowInfo)
 
     if(!operateRowInfo.resources.length) {
       alert('Please add at least one item')
       return
     }else {
-      console.log(111, operateRowInfo.id)
       this.props.concatAgentItems(operateRowInfo.id, operateRowInfo.resources.filter(s => s && s.trim())).then(() => {
         console.log('success')
         this.handleModalCancel()
@@ -82,7 +81,7 @@ class Agent extends React.Component {
     this.props.deleteRowItemById(rowId, itemIndex)
   }
   // 点击添加项目
-  handleAdd = rowId => {
+  handleAdd = (rowId, currentRef) => {
     this.setState(prevState => ({
       operateRowInfo: {
         ...INIT_OPERATEROWINFO,
@@ -90,6 +89,7 @@ class Agent extends React.Component {
       },
       confimModalProps: {
         ...INIT_CONFIMMODALPROPS,
+        currentRef,
         visible: true
       }
     }))
