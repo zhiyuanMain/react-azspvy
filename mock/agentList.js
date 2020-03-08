@@ -8,8 +8,7 @@ const imgSrc = [
 
 
 
-//0 building 1 idle
-const generateDataByTotal = (total) => {
+export const generateDataByTotal = (total) => {
     const result = [];
     for (let index = 0; index < total; index++) {
       const generateMathRandom = Math.random()
@@ -21,7 +20,7 @@ const generateDataByTotal = (total) => {
             realAddress: `bjstdmngr${index}.alipay.com`,
             localAddress: `192.158.1.10${index}`,
             folderAddress: `/assets/dev/user-${index}`,
-            list: getLists(index),
+            list: getLists(index % 4),
             deny: index % 2 ? true : false
         })
     }
@@ -33,4 +32,4 @@ const getLists = (num) => {
     return browers.splice(0, num+1)
 }
 
-export const agentList = generateDataByTotal(10)
+export const agentList = generateDataByTotal(6)

@@ -30,7 +30,7 @@ class Item extends React.Component {
   }
 
   renderHeader = () => {
-    const { prefixCls, type, realAddress, localAddress, folderAddress, badge } = this.props
+    const { prefixCls, id, type, realAddress, localAddress, folderAddress, badge } = this.props
     const wrapCls = `${prefixCls}__info__header`
 
     return (
@@ -48,21 +48,20 @@ class Item extends React.Component {
         </dd>
         <dd>
           <Icon iconClass="icon-bookresource" size="26px" />
-          <span>{folderAddress}</span>
+          <span>{folderAddress}***{id}</span>
         </dd>
       </dl>
     )
   }
 
   renderActionRow = () => {
-    const { prefixCls, list, deny } = this.props
+    const { prefixCls, list, deny, id, onDelete } = this.props
     const wrapCls = `${prefixCls}__info__actions` 
 
     return (
       <div className={wrapCls}>
         <span className={`${wrapCls}__add`}>
-          <Btn
-          >
+          <Btn>
             <Icon iconClass="icon-increase" size="16px" />
           </Btn>
         </span>
@@ -74,7 +73,9 @@ class Item extends React.Component {
                   type="default"
                 >
                   {item}
-                  <Icon iconClass="icon-delete" size="14px" />
+                  <span onClick={() => onDelete(id, index)}>
+                    <Icon iconClass="icon-delete" size="14px" />
+                  </span>
                 </Badge>
               </li>
             ))

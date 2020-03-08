@@ -2,11 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Block, Icon } from '../../components'
 import Item from './Item'
-import { setMenuKey } from '../../actions/aside'
+import { concatAgentList, deleteRowItemById } from '../../actions/agentWorkflow'
 import '../../assets/sass/bsComponents/Agent.scss'
-
-import { agentList } from '../../mock/agentList'
-
 
 
 class Agent extends React.Component {
@@ -14,16 +11,21 @@ class Agent extends React.Component {
     super(props)
   }
 
+  // delete
+  handleDelete = (rowId, itemIndex) => {
+    this.props.deleteRowItemById(rowId, itemIndex)
+  }
   renderList = () => {
     const { prefixCls, list } = this.props
     return (
       <React.Fragment>
         {
-          agentList.map(item => (
+          list.map(item => (
             <Item 
               key={item.id}
               prefixCls={`${prefixCls}__box`}
               {...item}
+              onDelete={this.handleDelete}
             />
           ))
         }
@@ -44,17 +46,17 @@ class Agent extends React.Component {
 }
 
 Agent.defaultProps = {
-  prefixCls: 'bs-agent'
+  prefixCls: 'bs-agent',
+  list: []
 }
 
-const mapStateToProps = ({ aside }) => ({
-  activeMenuKey: aside.activeMenuKey,
-  menuData: aside.menuData,
-  historyData: aside.historyData
+const mapStateToProps = ({ agentWorkflow }) => ({
+  list: agentWorkflow.list
 })
 
 const mapDispatchToProps = dispatch => ({
-  setMenuKey: menuKey => dispatch(setMenuKey({menuKey}))
+  concatAgentList: list => dispatch(concatAgentList({list})),
+  deleteRowItemById: (rowId, itemIndex) => dispatch(deleteRowItemById({rowId, itemIndex}))
 })
 
 
