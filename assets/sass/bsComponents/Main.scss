@@ -1,0 +1,23 @@
+@import "../variables/_variables.scss";
+.bs-main {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
+  &-section {
+    height: 100%;
+  }
+
+  &__aside {
+    width: 220px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &__content {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

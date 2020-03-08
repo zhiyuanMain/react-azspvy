@@ -14,7 +14,6 @@ body,
     font-family: "Avenir", "Helvetica", "Arial", "sans-serif";
     font-size: $base;
     font-weight: inherit;
-    color: $font-color-default;
     -webkit-tap-highlight-color: transparent;
 }
 body {
@@ -29,6 +28,7 @@ a{
     -webkit-focus-ring-color: $base;
     -moz-tap-highlight-color: $base;
     -moz-focus-ring-color: $base;
+    color: inherit;
 }
 a:visited{
     color: inherit;

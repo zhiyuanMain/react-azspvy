@@ -1,0 +1,12 @@
+@import "../variables/_variables.scss";
+.input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 0 10px;
+  outline: none;
+  border: 1px solid $default-deep;
+  height: 30px;
+  line-height: 30px;
+  background-color: $bg-colors-default;
+  -webkit-appearance: none;
+}

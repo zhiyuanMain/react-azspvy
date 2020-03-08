@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../assets/sass/components/Icon.scss'
 
 const Icon = ({
   prefixCls, 
@@ -6,10 +7,13 @@ const Icon = ({
   color,
   iconClass
 }) => (
-    <span 
-      style={{ fontSize: size, color }} className={`${prefixCls} ${iconClass}`} 
+    <svg 
+      style={{ fontSize: size, color }}
+      className="svg-icon" 
       aria-hidden="true"
-    />
+    >
+      <use xlinkHref={`#${iconClass}`} />
+    </svg>
 )
 
 

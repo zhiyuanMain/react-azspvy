@@ -1,0 +1,77 @@
+@import "../variables/_variables.scss";
+.confirm-modal {
+  position: fixed;
+  z-index: 11;
+  width: 570px;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid $primary;
+  background-color: $white;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50px;
+    border: 10px solid;
+    top: -20px;
+    border-color: transparent transparent $white;
+  }
+
+  &:before {
+    z-index: 12;
+    top: -20px;
+    border-color: transparent transparent $white;
+  }
+
+  &:after {
+    z-index: 11;
+    top: -21px;
+    border-color: transparent transparent $primary;
+  }
+
+  &.be-blocked {
+      &:before,
+      &:after {
+          top: auto;
+      }
+      &:before {
+          bottom: -20px;
+          border-color: $white transparent transparent;
+      }
+      &:after {
+          bottom: -21px;
+          border-color: $primary transparent transparent;
+      }
+  }
+
+  &__inner {
+    &__header {
+      position: relative;
+      padding: 10px;
+      
+      h1 {
+        line-height: 24px;
+      }
+
+      &__close {
+        position: absolute;
+        right: 10px;
+        top: 2px;
+        color: $blcak !important;
+        transform: rotate(45deg);
+      }
+    }
+
+    &__body {
+      padding: 10px;
+    }
+
+    &__footer {
+      padding: 5px 10px;
+      .btn {
+        margin-right: 10px;
+      }
+    }
+  }
+}

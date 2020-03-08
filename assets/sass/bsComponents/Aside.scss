@@ -1,0 +1,68 @@
+@import "../variables/_variables.scss";
+.bs-aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: $bg-colors-cancel;
+
+  &__menu {
+    flex: 1;
+    padding: 10px 0;
+
+    &__item {
+      padding: 0 20px;
+      line-height: 45px;
+      color: $white;
+      transition: all .3s;
+
+      &.active {
+        background-color: $bg-colors-deep-cancel;
+        color: $font-color-default-hover;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        color: inherit;
+      }
+
+      .svg-icon {
+        margin-right: 4px;
+        color: inherit !important;
+        vertical-align: middle;
+      }
+
+      span {
+        color: inherit; 
+      }
+    }
+  }
+
+  &__history {
+    padding: 5px 10px;
+
+    &__title {
+      font-size: 20px;
+      color: $white;
+    }
+
+    &__list {
+      margin-top: 10px;
+      &__item {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 12px;
+        line-height: 24px;
+        color: $font-color-gray;
+        transition: all .3s;
+
+
+        &:hover {
+          color: $font-color-default-hover;
+        }
+      }
+    }
+  }
+}

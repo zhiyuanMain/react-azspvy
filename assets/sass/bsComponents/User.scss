@@ -1,0 +1,52 @@
+@import "../variables/_variables.scss";
+.bs-user {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 60px;
+  cursor: pointer;
+  
+
+  &.opened {
+    .bs-user__arrow {
+      transform: rotate(0);
+    }
+
+    .bs-user__dropdown {
+      display: block;
+    }
+  }
+
+  &__avatar {
+    margin-right: 5px;
+  }
+
+  &__arrow {
+    transform: rotate(180deg);
+    transition: all .3s;
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    right: 0;
+    min-width: 120px;
+    padding: 10px 0;
+    box-shadow: 0 0 5px $box-shadow-color;
+    background: $white;
+    animation: flipInV .5s ease;
+
+    li {
+      padding: 0 15px;
+      line-height: 32px;
+      transition: background-color .3s;
+
+      &:hover {
+        background-color: $hover;
+      }
+    }
+  }
+
+}

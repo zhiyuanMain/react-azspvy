@@ -1,0 +1,17 @@
+@import "../variables/_variables.scss";
+.badge {
+  padding: 2px 10px;
+  line-height: 20px;
+  vertical-align: middle;
+  color: $white;
+  background-color: $bg-colors-deep-success;
+
+  &.warning {
+    background-color: $bg-colors-deep-warning
+  }
+
+  &.default {
+    background-color: $bg-colors-default;
+    color: $font-color-gray;
+  }
+}

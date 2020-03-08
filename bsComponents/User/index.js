@@ -1,31 +1,65 @@
 import React from 'react'
 import { Icon } from '../../components'
-import '../../assets/sass/bsComponents/Header.scss'
-
+import { WithCickOutside } from '../../hoc'
+import '../../assets/sass/bsComponents/User.scss'
 
 class User extends React.Component {
   constructor(props) {
     super(props)
   }
 
+  refWithClickOutside = null
+
+  initRef = e => this.refWithClickOutside = e
+
   renderAvatar = () => {
     const { prefixCls } = this.props
 
-    return <span className={`${prefixCls}__title`}><Icon iconClass="icon-angle-down" /></span>
+    return (
+      <span className={`${prefixCls}__avatar`}>
+         <Icon 
+          iconClass="icon-avatar"
+          size="24px" 
+        />
+      </span>
+    )
   }
 
-  renderUser = () => {
+  renderArrow = () => {
     const { prefixCls } = this.props
 
-    return <div className={`${prefixCls}__user`}>MANAGE</div>
+    return (
+      <span className={`${prefixCls}__arrow`}>
+        <Icon 
+          iconClass="icon-arrow" 
+        />
+      </span>
+    )
+  }
+
+  renderMenus = () => {
+    const { prefixCls } = this.props
+
+    return (
+      <ul className={`${prefixCls}__dropdown`}>
+        <li>Profile</li>
+        <li>Sign Out</li>
+      </ul>
+    )
   }
 
   render() {
-    const { prefixCls } = this.props
+    const { prefixCls, isOpened } = this.props
+    const wrapCls = `${prefixCls} ${isOpened ? 'opened' : ''}`
+
     return (
-      <section className={prefixCls}>
+      <section 
+        ref={this.initRef}
+        className={wrapCls}
+      >
         {this.renderAvatar()}
-        {this.renderUser()}
+        {this.renderArrow()}
+        {this.renderMenus()}
       </section>
     )
   }
@@ -33,7 +67,10 @@ class User extends React.Component {
 
 
 User.defaultProps = {
-  prefixCls: 'bs-user'
+  prefixCls: 'bs-user',
+
+  // clickoutside相关
+  isOpened: false
 }
 
-export default User
+export default WithCickOutside(User)
