@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../assets/sass/components/Btn.scss'
 
-const Btn = ({prefixCls, type, size, disabled, children}) => {
+const Btn = ({prefixCls, type, size, disabled, children, ...rest}) => {
   const typeCls = `${prefixCls}-${type}`
   const sizeCls = `${prefixCls}-${size}`
   const disabledCls = disabled ? `${prefixCls}-disabled` : ''
@@ -9,6 +9,7 @@ const Btn = ({prefixCls, type, size, disabled, children}) => {
   return (
       <span
         className={wrapCls}
+        {...rest}
       >
         {children}
       </span>

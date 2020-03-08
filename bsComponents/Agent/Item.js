@@ -55,13 +55,13 @@ class Item extends React.Component {
   }
 
   renderActionRow = () => {
-    const { prefixCls, list, deny, id, onDelete } = this.props
+    const { prefixCls, list, deny, id, onDelete, onAdd } = this.props
     const wrapCls = `${prefixCls}__info__actions` 
 
     return (
       <div className={wrapCls}>
         <span className={`${wrapCls}__add`}>
-          <Btn>
+          <Btn onClick={() => onAdd(id)}>
             <Icon iconClass="icon-increase" size="16px" />
           </Btn>
         </span>
@@ -116,7 +116,9 @@ Item.defaultProps = {
   localAddress: '',
   folderAddress: '',
   list: [],
-  deny: false
+  deny: false,
+  onAdd: () => {},
+  onDelete: () => {}
 }
 
 export default Item
