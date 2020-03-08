@@ -1,12 +1,14 @@
 import {
   AGENTWORKFLOW_CONCAT_LIST,
-  AGENTWORKFLOW_DELETE_BADGE_BY_ID
+  AGENTWORKFLOW_DELETE_BADGE_BY_ID,
+  AGENTWORKFLOW_REQUESTING
 } from '../../constant'
 
 import { agentList } from '../../mock/agentList'
 
 // 数据来源
 const initialState = {
+  isLoading: false,
   list: [...agentList]
 }
 
@@ -29,6 +31,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         list: prevList
+      }
+    case AGENTWORKFLOW_REQUESTING: 
+      return  {
+        ...state,
+        isLoading: action.payload.isLoading
       }
     default:
       return state

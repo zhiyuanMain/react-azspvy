@@ -30,7 +30,7 @@ class Item extends React.Component {
   }
 
   renderHeader = () => {
-    const { prefixCls, id, type, realAddress, localAddress, folderAddress, badge } = this.props
+    const { prefixCls, id, type, realAddress, localAddress, folderAddress, badge, index } = this.props
     const wrapCls = `${prefixCls}__info__header`
 
     return (
@@ -48,7 +48,7 @@ class Item extends React.Component {
         </dd>
         <dd>
           <Icon iconClass="icon-bookresource" size="26px" />
-          <span>{folderAddress}***{id}</span>
+          <span>{folderAddress}</span>
         </dd>
       </dl>
     )
@@ -107,6 +107,7 @@ class Item extends React.Component {
 
 
 Item.defaultProps = {
+  index: 0,
   id: '',
   type: 0,
   badge: '',

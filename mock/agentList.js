@@ -32,4 +32,4 @@ const getLists = (num) => {
     return browers.splice(0, num+1)
 }
 
-export const agentList = generateDataByTotal(6)
+export const agentList = generateDataByTotal(10)

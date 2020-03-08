@@ -1,6 +1,8 @@
 @import "../variables/_variables.scss";
 .bs-agent {
   padding: 0 10px 10px;
+  height: 100%;
+  overflow: hidden;
 
   &__box {
     display: flex;
