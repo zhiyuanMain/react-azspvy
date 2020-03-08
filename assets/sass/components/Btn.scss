@@ -1,0 +1,21 @@
+@import "../variables/_variables.scss";
+.btn {
+  padding: 2px 10px;
+  line-height: 14px;
+  vertical-align: middle;
+  color: $white;
+  background-color: $bg-colors-deep-default;
+  cursor: pointer;
+
+  .svg-icon {
+    color: inherit !important;
+  }
+
+  &-primary {
+    background-color: $bg-colors-deep-primary;
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+  }
+}

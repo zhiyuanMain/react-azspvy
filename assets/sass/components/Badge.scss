@@ -9,4 +9,9 @@
   &.warning {
     background-color: $bg-colors-deep-warning
   }
+
+  &.default {
+    background-color: $bg-colors-default;
+    color: $font-color-gray;
+  }
 }

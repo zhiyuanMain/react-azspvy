@@ -1,5 +1,5 @@
 import React from 'react'
-import { Block, Icon, Badge } from '../../components'
+import { Block, Icon, Badge, Btn } from '../../components'
 
 class Item extends React.Component {
   constructor(props) {
@@ -24,6 +24,7 @@ class Item extends React.Component {
     return (
       <div className={wrapCls}>
         {this.renderHeader()}
+        {this.renderActionRow()}
       </div>
     )
   }
@@ -50,6 +51,44 @@ class Item extends React.Component {
           <span>{folderAddress}</span>
         </dd>
       </dl>
+    )
+  }
+
+  renderActionRow = () => {
+    const { prefixCls, list, deny } = this.props
+    const wrapCls = `${prefixCls}__info__actions` 
+
+    return (
+      <div className={wrapCls}>
+        <span className={`${wrapCls}__add`}>
+          <Btn
+          >
+            <Icon iconClass="icon-increase" size="16px" />
+          </Btn>
+        </span>
+        <ul className={`${wrapCls}__list`}>
+          {
+            list.map((item, index) => (
+              <li key={`${item}_${index}`}>
+                <Badge
+                  type="default"
+                >
+                  {item}
+                  <Icon iconClass="icon-delete" size="14px" />
+                </Badge>
+              </li>
+            ))
+          }
+        </ul>
+        <span className={`${wrapCls}__deny`}>
+          { deny ? (
+            <Btn disabled>
+            <Icon iconClass="icon-refuse" size="16px"  />
+              Deny
+          </Btn>
+          ) : null}
+        </span>
+      </div>
     )
   }
 
