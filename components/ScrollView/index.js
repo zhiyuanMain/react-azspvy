@@ -39,7 +39,6 @@ class ScrollView extends React.Component {
 
   render() {
     const { prefixCls, children, isLoading, isEnded } = this.props
-    console.log(111, isLoading)
 
     return (
       <div ref={this.initRef} className={prefixCls}>
