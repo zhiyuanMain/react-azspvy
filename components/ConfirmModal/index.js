@@ -138,5 +138,4 @@ ConfirmModal.defaultProps = {
   onCancel: () => {},
   renderBody: () => null
 }
-const ConfirmModal1 = () => <span>1</span>
 export default ConfirmModal
